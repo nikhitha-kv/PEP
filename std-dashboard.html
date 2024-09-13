@@ -17,13 +17,13 @@
                 <i class="fas fa-cog"></i>
             </div>
         </div>
-        <h1>Student Dashboard</h1>
+        <h1>Patient Dashboard</h1>
     </header>
     <main>
         <section class="welcome-section">
             <!-- Welcome message -->
             <h2 style="color: white;">Hi! Welcome</h2>
-            <p style="color: white;">What's your doubt for today?</p>
+            <p style="color: white;">How are you Today?</p>
             <!-- Text box for writing doubt -->
             <textarea id="doubt-box" placeholder="Write your doubt here..."></textarea>
             <!-- Button to clear doubt -->
@@ -45,24 +45,24 @@
             // Dummy mentor data (replace this with actual mentor data)
             const mentors = [
                 { 
-                    name: 'Mr.David', 
-                    profession: 'Software Engineer',
+                    name: 'Dr.David', 
+                    Doctor: '',
                     qualification: 'Bachelor of Science in Computer Science',
                     location: 'New York, USA',
                     contact: '+1 123-456-7890',
                     image: 'assets/mentor1.jpg'
                 },
                 { 
-                    name: 'Ms.Monica', 
-                    profession: 'Machine Learning Engineer',
+                    name: 'Dr.Monica', 
+                    Doctor: 'Machine Learning Engineer',
                     qualification: 'Master of Science in Artificial Intelligence',
                     location: 'San Francisco, USA',
                     contact: '+1 987-654-3210',
                     image: 'assets/mentor2.jpg'
                 },
                 { 
-                    name: 'Mr.Albert', 
-                    profession: 'Web Developer',
+                    name: 'Dr.Albert', 
+                    Doctor: 'Web Developer',
                     qualification: 'Bachelor of Technology in Computer Engineering',
                     location: 'London, UK',
                     contact: '+44 1234-567890',
@@ -80,18 +80,18 @@
                 const mentorName = document.createElement('h3');
                 mentorName.textContent = mentor.name;
 
-                // Create mentor profession element
-                const mentorProfession = document.createElement('p');
-                mentorProfession.textContent = mentor.profession;
+                // Create mentor Doctor element
+                const mentorDoctor = document.createElement('p');
+                mentorDoctor.textContent = mentor.Doctor;
 
                 // Create contact button
                 const contactButton = document.createElement('button');
-                contactButton.textContent = 'Contact Mentor';
+                contactButton.textContent = 'Contact Doctor';
                 contactButton.onclick = () => displayMentorDetails(mentor); // Call function to display mentor details
 
                 // Append elements to mentor card
                 mentorCard.appendChild(mentorName);
-                mentorCard.appendChild(mentorProfession);
+                mentorCard.appendChild(mentorDoctor);
                 mentorCard.appendChild(contactButton);
 
                 // Append mentor card to mentors section
@@ -110,12 +110,12 @@
             modal.innerHTML = `
                 <img src="${mentor.image}" alt="${mentor.name}">
                 <h2>${mentor.name}</h2>
-                <p><strong>Profession:</strong> ${mentor.profession}</p>
+                <p><strong>Doctor:</strong> ${mentor.Doctor}</p>
                 <p><strong>Qualification:</strong> ${mentor.qualification}</p>
                 <p><strong>Location:</strong> ${mentor.location}</p>
                 <p><strong>Contact:</strong> ${mentor.contact}</p>
                 <button onclick="closeModal()">Close</button>
-                <button onclick="bookSession('${mentor.name}')">Book a Session</button>
+                <button onclick="bookSession('${mentor.name}')">Book a Appointment</button>
             `;
 
             // Append modal to overlay
