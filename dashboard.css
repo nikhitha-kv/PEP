@@ -64,38 +64,63 @@ main {
     background-color: #00b38c; /* Darker blue on hover */
 }
 
-.mentors-section {
+#patients-container {
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap;
     gap: 20px;
+    justify-content: center;
 }
 
-.mentor-card {
-    background-color: #131313;
+.patient-card {
+    background-color: rgba(255, 255, 255, 0.1);
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(255, 255, 255, 0.329);
     text-align: center;
 }
 
-.mentor-card h3 {
+.patient-card h3 {
     margin-top: 0;
     color: #fff;
 }
-.mentor-card p{
+
+.patient-card p {
     color: #fff;
 }
-.mentor-card button {
-    background-color: #00fff2;
-    color: #030303;
+
+#start-consultation-btn {
+    background-color: #8398c5;
+    color: #fff;
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
 }
 
-.mentor-card button:hover {
-    background-color: #00b3b3;
+#start-consultation-btn:hover {
+    background-color: #00b38c;
+}
+
+.accept-btn, .reject-btn {
+    background-color: #209669;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.accept-btn:hover {
+    background-color: #00b38c;
+}
+
+.reject-btn {
+    background-color: #ff4d4d;
+}
+
+.reject-btn:hover {
+    background-color: #ff1a1a;
 }
 
 
