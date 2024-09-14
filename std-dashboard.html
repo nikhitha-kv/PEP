@@ -46,24 +46,24 @@
             const mentors = [
                 { 
                     name: 'Dr.David', 
-                    Doctor: '',
-                    qualification: '',
+                    Doctor: 'General',
+                    qualification: 'MBBS',
                     location: 'New York, USA',
                     contact: '+1 123-456-7890',
                     image: 'assets/mentor1.jpg'
                 },
                 { 
                     name: 'Dr.Monica', 
-                    Doctor: '',
-                    qualification: '',
+                    Doctor: 'Cardilogist',
+                    qualification: 'MBBS',
                     location: 'San Francisco, USA',
                     contact: '+1 987-654-3210',
                     image: 'assets/mentor2.jpg'
                 },
                 { 
                     name: 'Dr.Albert', 
-                    Doctor: '',
-                    qualification: '',
+                    Doctor: 'Cardiologist',
+                    qualification: 'MBBS',
                     location: 'London, UK',
                     contact: '+44 1234-567890',
                     image: 'assets/mentor3.jpg'
@@ -110,7 +110,7 @@
             modal.innerHTML = `
                 <img src="${mentor.image}" alt="${mentor.name}">
                 <h2>${mentor.name}</h2>
-                <p><strong>Doctor:</strong> ${mentor.Doctor}</p>
+                <p><strong>Specialist:</strong> ${mentor.Doctor}</p>
                 <p><strong>Qualification:</strong> ${mentor.qualification}</p>
                 <p><strong>Location:</strong> ${mentor.location}</p>
                 <p><strong>Contact:</strong> ${mentor.contact}</p>
