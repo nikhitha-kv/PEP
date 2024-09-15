@@ -189,3 +189,64 @@ main {
 .modal button:hover {
     background-color: #0056b3;
 }
+
+
+
+#patients-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.patient-card {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.329);
+    text-align: center;
+}
+
+.patient-card h3 {
+    margin-top: 0;
+    color: #fff;
+}
+
+.patient-card p {
+    color: #fff;
+}
+
+#start-consultation-btn {
+    background-color: #8398c5;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#start-consultation-btn:hover {
+    background-color: #00b38c;
+}
+
+.accept-btn, .reject-btn {
+    background-color: #209669;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.accept-btn:hover {
+    background-color: #00b38c;
+}
+
+.reject-btn {
+    background-color: #ff4d4d;
+}
+
+.reject-btn:hover {
+    background-color: #ff1a1a;
+}

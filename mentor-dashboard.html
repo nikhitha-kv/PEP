@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mentor Dashboard</title>
+    <title>Doctor Dashboard</title>
     <link rel="stylesheet" href="dashboard.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
@@ -17,65 +17,86 @@
                 <i class="fas fa-cog"></i>
             </div>
         </div>
-        <h1>Mentor Dashboard</h1>
+        <h1>Doctor Dashboard</h1>
     </header>
     <main>
         <section class="welcome-section">
             <!-- Welcome message -->
-            <h2 style="color: white;">Welcome, Mentor!</h2>
-            <p style="color: white;">Here are the students you are going to mentor today.</p>
-            <!-- Students' details -->
-            <div id="students-container"></div><br/>
+            <h2 style="color: white;">Welcome, Doctor!</h2>
+            <p style="color: white;">Here are the patients you need to check today.</p>
+            <!-- Patients' details -->
+            <div id="patients-container"></div><br/>
             <br/>
-            <!-- "Go Live" button -->
-            <button id="go-live-btn">Go Live</button>
+            <!-- "Start Consultation" button -->
+            <button id="start-consultation-btn">Start Consultation</button>
         </section>
     </main>
     <script>
-        // Student data (replace with actual data)
-        const students = [
-            { name: 'Sree', grade: 'IT - 2st year', doubt: 'Linear Regression' },
-            { name: 'Hari', grade: 'CSE - 1st year', doubt: 'Alpha Beta prunning' },
-            { name: 'Divya', grade: 'AIDS - 2st year', doubt: 'KNN' }
+        // Patient data (replace with actual data)
+        const patients = [
+            { name: 'John Doe', age: 45, condition: 'Hypertension' },
+            { name: 'Jane Smith', age: 32, condition: 'Diabetes' },
+            { name: 'Emily Davis', age: 28, condition: 'Thyroid Disorder' }
         ];
 
-        // Function to display students' details
-        function displayStudents() {
-            const studentsContainer = document.getElementById('students-container');
+        // Function to display patients' details
+        function displayPatients() {
+            const patientsContainer = document.getElementById('patients-container');
 
-            // Clear any existing student details
-            studentsContainer.innerHTML = '';
+            // Clear any existing patient details
+            patientsContainer.innerHTML = '';
 
-            // Loop through the students array and create a card for each student
-            students.forEach((student, index) => {
-                // Create student card container
-                const studentCard = document.createElement('div');
-                studentCard.classList.add('student-card');
+            // Loop through the patients array and create a card for each patient
+            patients.forEach((patient, index) => {
+                // Create patient card container
+                const patientCard = document.createElement('div');
+                patientCard.classList.add('patient-card');
 
-                // Create student name element
-                const studentName = document.createElement('h3');
-                studentName.textContent = `Student ${index + 1}: ${student.name}`;
+                // Create patient name element
+                const patientName = document.createElement('h3');
+                patientName.textContent = `Patient ${index + 1}: ${patient.name}`;
 
-                // Create student grade element
-                const studentGrade = document.createElement('p');
-                studentGrade.textContent = `Grade: ${student.grade}`;
+                // Create patient age element
+                const patientAge = document.createElement('p');
+                patientAge.textContent = `Age: ${patient.age}`;
 
-                // Create student doubt element
-                const studentDoubt = document.createElement('p');
-                studentDoubt.textContent = `Doubt: ${student.doubt}`;
+                // Create patient condition element
+                const patientCondition = document.createElement('p');
+                patientCondition.textContent = `Condition: ${patient.condition}`;
 
-                // Append elements to student card
-                studentCard.appendChild(studentName);
-                studentCard.appendChild(studentGrade);
-                studentCard.appendChild(studentDoubt);
+                // Create Accept and Reject buttons
+                const acceptButton = document.createElement('button');
+                acceptButton.textContent = 'Accept';
+                acceptButton.classList.add('accept-btn');
 
-                // Append student card to students container
-                studentsContainer.appendChild(studentCard);
+                const rejectButton = document.createElement('button');
+                rejectButton.textContent = 'Reject';
+                rejectButton.classList.add('reject-btn');
+
+                // Event listener for Accept button
+                acceptButton.addEventListener('click', function () {
+                    alert(`${patient.name} has been accepted for consultation.`);
+                });
+
+                // Event listener for Reject button
+                rejectButton.addEventListener('click', function () {
+                    alert(`${patient.name} has been rejected for consultation.`);
+                });
+
+                // Append elements to patient card
+                patientCard.appendChild(patientName);
+                patientCard.appendChild(patientAge);
+                patientCard.appendChild(patientCondition);
+                patientCard.appendChild(acceptButton);
+                patientCard.appendChild(rejectButton);
+
+                // Append patient card to patients container
+                patientsContainer.appendChild(patientCard);
             });
         }
 
-        // Call the function to display students' details
-        displayStudents();
+        // Call the function to display patients' details
+        displayPatients();
     </script>
 </body>
 
